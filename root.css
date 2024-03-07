@@ -1,5 +1,3 @@
-/* root.css */
-
 :root {
     --primary-color: #1890ff;
     --secondary-color: #40a9ff;
@@ -11,6 +9,14 @@
     --border-radius: 2px;
     --box-shadow-color: rgba(24, 144, 255, 0.5);
     --loading-spinner-color: #ffffff;
+    --button-height: 32px;
+    --button-width: 74px;
+    --loading-width: 98px;
+    --loading-spinner-size: 14px;
+    --input-padding: 8px 12px;
+    --container-gap: 12px;
+    --container-min-height: 100vh;
+    --input-border-color: #d9d9d9;
 }
 
 /* style.css */
@@ -18,23 +24,22 @@ body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--default-font-family);
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: var(--container-min-height);
     flex-direction: column;
-    gap: 12px;
+    gap: var(--container-gap);
 }
 
 /* button class */
 .button {
-    height: 32px;
-    width: 74px;
-    font-family: var(--default-font-family);
+    height: var(--button-height);
+    width: var(--button-width);
     padding: var(--default-padding);
     border-radius: var(--border-radius);
     border: none;
@@ -70,14 +75,16 @@ body, html {
     border: 2px solid #da515100;
     border-top: 2px solid var(--loading-spinner-color);
     border-radius: 50%;
-    width: 14px;
-    height: 14px;
+    width: var(--loading-spinner-size);
+    height: var(--loading-spinner-size);
     animation: spin 1s linear infinite;
     display: none;
 }
-.button.loading{
-    width: 98px;
+
+.button.loading {
+    width: var(--loading-width);
 }
+
 .button.loading .loading-spinner {
     display: inline-block;
     visibility: visible;
@@ -90,9 +97,9 @@ body, html {
 
 /* input class */
 .input-field {
-    padding: 8px 12px;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
+    padding: var(--input-padding);
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--border-radius);
     outline: none;
     transition: border-color 0.25s, box-shadow 0.25s;
     background-image: url('./User.png'); /* Add the path to your PNG image */
@@ -102,17 +109,17 @@ body, html {
 }
 
 .input-field:hover {
-    border-color: #40a9ff;
+    border-color: var(--secondary-color);
 }
 
 .input-field:focus {
-    border-color: #1890ff;
+    border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 
 .input-field.disabled {
-    background-color: #f5f5f5;
-    color: #bfbfbf;
-    border-color: #d9d9d9;
+    background-color: var(--disabled-color);
+    color: var(--disabled-text-color);
+    border-color: var(--input-border-color);
     cursor: not-allowed;
 }

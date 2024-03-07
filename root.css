@@ -102,7 +102,7 @@ body, html {
     border-radius: var(--border-radius);
     outline: none;
     transition: border-color 0.25s, box-shadow 0.25s;
-    background-image: url('./User.png'); /* Add the path to your PNG image */
+    background-image: url('./res/User.png'); /* Add the path to your PNG image */
     background-repeat: no-repeat;
     background-position: 10px center; /* Adjust the position of the image */
     padding-left: 40px; /* Adjust the padding to make space for the image */

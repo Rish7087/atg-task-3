@@ -1,0 +1,118 @@
+/* root.css */
+
+:root {
+    --primary-color: #1890ff;
+    --secondary-color: #40a9ff;
+    --tertiary-color: #096dd9;
+    --disabled-color: #f5f5f5;
+    --disabled-text-color: #bfbfbf;
+    --default-font-family: 'Roboto', sans-serif;
+    --default-padding: 5px 16px;
+    --border-radius: 2px;
+    --box-shadow-color: rgba(24, 144, 255, 0.5);
+    --loading-spinner-color: #ffffff;
+}
+
+/* style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* button class */
+.button {
+    height: 32px;
+    width: 74px;
+    font-family: var(--default-font-family);
+    padding: var(--default-padding);
+    border-radius: var(--border-radius);
+    border: none;
+    color: #fff;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--box-shadow-color);
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+}
+
+.button:active {
+    background-color: var(--tertiary-color);
+}
+
+.button:disabled {
+    background-color: var(--disabled-color);
+    color: var(--disabled-text-color);
+    cursor: not-allowed;
+}
+
+.loading-spinner {
+    border: 2px solid #da515100;
+    border-top: 2px solid var(--loading-spinner-color);
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+.button.loading{
+    width: 98px;
+}
+.button.loading .loading-spinner {
+    display: inline-block;
+    visibility: visible;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* input class */
+.input-field {
+    padding: 8px 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    background-image: url('./User.png'); /* Add the path to your PNG image */
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Adjust the position of the image */
+    padding-left: 40px; /* Adjust the padding to make space for the image */
+}
+
+.input-field:hover {
+    border-color: #40a9ff;
+}
+
+.input-field:focus {
+    border-color: #1890ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.input-field.disabled {
+    background-color: #f5f5f5;
+    color: #bfbfbf;
+    border-color: #d9d9d9;
+    cursor: not-allowed;
+}
